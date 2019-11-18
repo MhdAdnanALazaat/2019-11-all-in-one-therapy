@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+          <title>@yield('title') &ndash; AIOT</title>
+
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+
+        <!-- Styles -->
+      <link href="/css/app.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="flex-center position-ref full-height">
+            @if (Route::has('login'))
+                <div class="top-right links">
+                    @auth
+                        <a href="{{ route('logout') }}">Logout</a>
+                    @else
+
+                        <a class="btn-block" href="{{ route('login') }}">Login</a>
+                    @endauth
+                </div>
+            @endif
+
+            <div class="content">
+                <div class="title m-b-md">
+                    @yield('title') &ndash; AIOT
+                </div>
+
+
+                <main>
+                    @yield('main')
+                </main>
+            </div>
+        </div>
+    </body>
+</html>
