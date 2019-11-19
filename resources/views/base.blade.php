@@ -31,11 +31,13 @@
 
             <div class="content">
                 <div class="title m-b-md">
+                    <div class="p-0 mb-0 bg-primary text-white">
                     @yield('title') &ndash; AIOT
+                    </div>
                 </div>
 
 
-                <main>
+                <main class="text-success">
                     @yield('main')
                 </main>
             </div>

@@ -1,6 +1,6 @@
 @extends('base')
 
-@section('title','Willkommen')
+@section('title','Willkommen in frontend')
 
 @section('top-links')
     @auth
