@@ -28,19 +28,22 @@
                     @endauth
                 </div>
             @endif
-
+                <div class="container">
             <div class="content">
                 <div class="title m-b-md">
-                    <div class="p-0 mb-0 bg-primary text-white">
+                    <div>
                     @yield('title') &ndash; AIOT
                     </div>
                 </div>
-
-
-                <main class="text-success">
-                    @yield('main')
-                </main>
             </div>
+                </div>
         </div>
+        <section>
+            <div class="container">
+                <div class="row">
+                    @yield('main')
+                </div>
+            </div>
+        </section>
     </body>
 </html>
