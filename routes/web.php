@@ -33,6 +33,8 @@ Route::group(['middleware' => ['auth']], function () {
     });
     Route::get('/patients', 'PatientController@index');
     Route::post('/patients', 'PatientController@index')->name('patients');
+    Route::get('/patients/{id}', 'PatientController@info');
+    Route::patch('/patients/{id}', 'PatientController@update');
 
 
 });

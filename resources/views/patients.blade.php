@@ -18,12 +18,14 @@
         <tr>
             <th> @sortablelink('id')</th>
             <th>@sortablelink('firstname')</th>
+            <th>@sortablelink('lastname')</th>
             <th>@sortablelink('svnr')</th>
-
+            <th>@sortablelink('email')</th>
             <th scope="col">@sortablelink('Address')</th>
             <th scope="col">@sortablelink('Plz')</th>
             <th scope="col">@sortablelink('Ort')</th>
             <th scope="col">@sortablelink('Land')</th>
+            <th>view info</th>
         </tr>
         @if($patients->count())
         @foreach($patients as $key =>  $patient)
@@ -31,12 +33,14 @@
     <tr>
         <td>{{ $patient->id }}</td>
         <td>{{ $patient->firstname }}</td>
-    <td>{{ $patient->svnr }}</td>
-
-    <td>{{ $patient->address }}</td>
-    <td>{{ $patient->plz }}</td>
-    <td>{{ $patient->city }}</td>
-    <td>{{ $patient->country }}</td>
+        <td>{{ $patient->lastname }}</td>
+        <td>{{ $patient->svnr }}</td>
+        <td>{{ $patient->email }}</td>
+        <td>{{ $patient->address }}</td>
+        <td>{{ $patient->plz }}</td>
+        <td>{{ $patient->city }}</td>
+        <td>{{ $patient->country }}</td>
+    <td><a href="patients/{{$patient->id}}">view info</a> </td>
     </tr>
 
 

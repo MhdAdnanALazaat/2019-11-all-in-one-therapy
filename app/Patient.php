@@ -10,8 +10,8 @@ class Patient extends Model
     use Sortable;
 
 
-    protected $fillable = [ 'firstname', 'id', 'plz' ];
+    protected $fillable = [ 'id', 'svnr', 'firstname','lastname','email','address','plz','city','country' ];
 
 
-    public $sortable = ['id', 'svnr', 'firstname', 'created_at', 'updated_at'];
+    public $sortable = ['id', 'svnr', 'firstname', 'lastname','email','address','plz','city','country','created_at', 'updated_at'];
 }

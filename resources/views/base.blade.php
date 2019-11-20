@@ -33,18 +33,16 @@
             <div class="content">
                 <div class="title m-b-md">
                     <div>
-                    @yield('title') &ndash; AIOT
+                    @yield('title')
                     </div>
                 </div>
             </div>
                 </div>
         </div>
         <main>
-            <div class="container">
                 <div class="row">
                     @yield('main')
                 </div>
-            </div>
         </main>
     </body>
 </html>
