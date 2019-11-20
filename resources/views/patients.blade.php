@@ -4,30 +4,50 @@
 @parent
 @endsection
 @section('main')
-    <table class="table">
-        <thead>
+    <div class="container">
+        <form action="{{route('patients')}}", method="post">
+            @csrf
+            <div class="input-group">
+            <input  class="form-control"  name="firstname" placeholder="firstname">
+            <button class="btn btn-info" type="submit">suchen</button>
+                <i class="glyphicon glyphicon-search"></i>
+                </button>
+            </div>
+        </form>
+    <table  class="table table-bordered table-dark">
         <tr>
-            <th scope="col">Svnr</th>
-            <th scope="col">Name</th>
-            <th scope="col">Address</th>
-            <th scope="col">Plz</th>
-            <th scope="col">Ort</th>
-            <th scope="col">Land</th>
+            <th> @sortablelink('id')</th>
+            <th>@sortablelink('firstname')</th>
+            <th>@sortablelink('svnr')</th>
+
+            <th scope="col">@sortablelink('Address')</th>
+            <th scope="col">@sortablelink('Plz')</th>
+            <th scope="col">@sortablelink('Ort')</th>
+            <th scope="col">@sortablelink('Land')</th>
         </tr>
-        </thead>
-        @foreach($patients as $patient)
+        @if($patients->count())
+        @foreach($patients as $key =>  $patient)
             <tbody>
     <tr>
+        <td>{{ $patient->id }}</td>
+        <td>{{ $patient->firstname }}</td>
     <td>{{ $patient->svnr }}</td>
-    <td>{{ $patient->lastname }}</td>
+
     <td>{{ $patient->address }}</td>
     <td>{{ $patient->plz }}</td>
     <td>{{ $patient->city }}</td>
     <td>{{ $patient->country }}</td>
     </tr>
 
+
+
     @endforeach
+
+    {!! $patients->appends(\Request::except('page'))->render()->render()!!}
+
+    @endif
             </tbody>
+
     </table>
-    <p>{{$patients->links()}}</p>
+
 @endsection

@@ -32,6 +32,9 @@ Route::group(['middleware' => ['auth']], function () {
         return view('backend');
     });
     Route::get('/patients', 'PatientController@index');
+    Route::post('/patients', 'PatientController@index')->name('patients');
+
+
 });
 
 
