@@ -15,7 +15,6 @@
                     <input placeholder="Username" type="text" name="name">
                 </p>
             @endif
-            @if ($errors->has('password'))
                 <p class="validation-failed">
                     {{ $errors->first('password') }} <br/>
                     <input class="validation-failed" placeholder="Password" type="password" name="password" >
