@@ -29,20 +29,20 @@
                     @endauth
                 </div>
             @endif
-                <div class="container">
+
             <div class="content">
                 <div class="title m-b-md">
-                    <div>
-                    @yield('title')
-                    </div>
+
+                    @yield('title') &ndash;
+
+
                 </div>
-            </div>
-                </div>
-        </div>
-        <main>
-                <div class="row">
+                <main>
+
                     @yield('main')
-                </div>
-        </main>
+
+                </main>
+            </div>
+        </div>
     </body>
 </html>

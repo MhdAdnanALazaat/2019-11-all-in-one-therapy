@@ -5,6 +5,8 @@
 @endsection
 @section('main')
     <div class="container">
+        <button class="btn btn-light btn-block btn-dark" type="submit"><a href="/patients/create">Add New Patient</a>
+        </button>
         <form action="{{route('patients')}}", method="post">
             @csrf
             <div class="input-group">

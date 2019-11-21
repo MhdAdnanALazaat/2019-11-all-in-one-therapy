@@ -32,6 +32,8 @@ Route::group(['middleware' => ['auth']], function () {
         return view('backend');
     });
     Route::get('/patients', 'PatientController@index');
+    Route::get('/patients/create','PatientController@create');
+    Route::post('/patients/create','PatientController@store')->name('newPatient');
     Route::post('/patients', 'PatientController@index')->name('patients');
     Route::get('/patients/{id}', 'PatientController@info');
     Route::patch('/patients/{id}', 'PatientController@update');

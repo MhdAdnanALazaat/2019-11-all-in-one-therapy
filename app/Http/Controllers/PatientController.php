@@ -27,7 +27,8 @@ class PatientController extends Controller
     }
 
 
-         public function update($id){
+         public function update($id)
+         {
              $data = request()->validate([
                  'svnr' => 'required',
                  'firstname' => 'required',
@@ -52,6 +53,39 @@ class PatientController extends Controller
                      'city' => $data['city'],
                      'country' => $data['country']
                  ]);
-             return  redirect("/patients/");
+             return redirect("/patients/");
+         }
 
-}}
+         public function create()
+         {
+             return view('create');
+         }
+
+
+             public function store()
+             {
+                 $data = request()->validate([
+                     'svnr' => 'required',
+                     'firstname' => 'required',
+                     'lastname' => 'required',
+                     'email' => 'required',
+                     'address' => 'required',
+                     'plz' => 'required',
+                     'city' => 'required',
+                     'country' => 'required',
+                 ]);
+                 /*dd($data);*/
+                 DB::table('patients')
+                     ->insert([
+                         'svnr' => $data['svnr'],
+                         'firstname' => $data['firstname'],
+                         'lastname' => $data['lastname'],
+                         'email' => $data['email'],
+                         'address' => $data['address'],
+                         'plz' => $data['plz'],
+                         'city' => $data['city'],
+                         'country' => $data['country']
+                     ]);
+                 return redirect('/patients');
+             }
+}
